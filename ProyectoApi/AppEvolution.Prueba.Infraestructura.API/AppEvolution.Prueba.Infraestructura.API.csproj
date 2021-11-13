@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AppEvolution.Prueba.Aplicacion\AppEvolution.Prueba.Aplicaciones.csproj" />
+    <ProjectReference Include="..\AppEvolution.Prueba.Dominio\AppEvolution.Prueba.Dominio.csproj" />
+    <ProjectReference Include="..\AppEvolution.Prueba.Infraestructura.Datos\AppEvolution.Prueba.Infraestructura.Datos.csproj" />
+  </ItemGroup>
+
+
+</Project>

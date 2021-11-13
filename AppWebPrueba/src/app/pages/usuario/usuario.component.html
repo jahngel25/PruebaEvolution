@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <form class="m-4" [formGroup]="formaUsuario" (ngSubmit)="CrearUsuario()">
+            <h1>Crear Usuario</h1>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nombre</label>
+                <input type="text" class="form-control" formControlName="UsuNombre" [class.is-invalid]="NombreNoValido" width="100" />
+                <small *ngIf="NombreNoValido" class="text-danger">Debe ingresar el descuento</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Contraseña</label>
+                <input type="text" class="form-control" formControlName="UsuPass" [class.is-invalid]="PassNoValido" width="100" />
+                <small *ngIf="PassNoValido" class="text-danger">Debe ingresar el descuento</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>

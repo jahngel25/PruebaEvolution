@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <form class="m-4" [formGroup]="formaProducto" (ngSubmit)="CrearProducto()">
+            <h1>Crear Producto</h1>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Descripcion del producto</label>
+                <input type="text" class="form-control" formControlName="ProDesc" [class.is-invalid]="ProDescNoValido" width="100" />
+                <small *ngIf="ProDescNoValido" class="text-danger">Debe ingresar el descuento</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Valor del producto</label>
+                <input type="number" class="form-control" formControlName="ProValor" [class.is-invalid]="ProValorNoValido" width="100" />
+                <small *ngIf="ProValorNoValido" class="text-danger">Debe ingresar el descuento</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>

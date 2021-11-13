@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <form class="m-4" [formGroup]="formaPedido" (ngSubmit)="CrearPedido()">
+            <h1>Crear Producto</h1>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Usuario</label>
+                <select class="form-control" formControlName="PedUsu" [class.is-invalid]="PedUsuNoValido" width="100">
+                    <ng-container *ngFor="let item of usuarios">
+                        <option value="{{item.usuID}}">{{item.usuNombre}}</option>
+                    </ng-container>                    
+                </select>
+                <small *ngIf="PedUsuNoValido" class="text-danger">Debe ingresar el descuento</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Producto</label>
+                <select class="form-control" formControlName="PedProdID" [class.is-invalid]="PedProdIDNoValido" width="100" (change)="asignarValor()">
+                    <ng-container *ngFor="let item of productos">
+                        <option value="{{item.proID}}" >{{item.proDesc}}</option>
+                    </ng-container>            
+                </select>
+                <small *ngIf="PedProdIDNoValido" class="text-danger">Debe ingresar el descuento</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Valor Unidad</label>
+                <input type="number" class="form-control" formControlName="PedVrUnit" id="PedVrUnit" [class.is-invalid]="PedVrUnitNoValido" width="100" />
+                <small *ngIf="PedVrUnitNoValido" class="text-danger">Debe ingresar el descuento</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Cantidad</label>
+                <input type="number" class="form-control" formControlName="PedCant" [class.is-invalid]="PedCantNoValido" width="100" />
+                <small *ngIf="PedCantNoValido" class="text-danger">Debe ingresar el descuento</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <h1>Historico</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Valor Unidad</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Sub Total</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">IVA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of pedidos">
+                    <td>{{item.pedUsu}}</td>
+                    <td>{{item.pedProdID}}</td>
+                    <td>{{item.pedVrUnit}}</td>
+                    <td>{{item.pedCant}}</td>
+                    <td>{{item.pedSubTot}}</td>
+                    <td>{{item.pedIVA}}</td>
+                    <td>{{item.pedTotal}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-2"></div>
+</div>

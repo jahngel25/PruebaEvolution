@@ -1,0 +1,589 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import '../node_modules/bootstrap/scss/bootstrap-reboot';
+@import '../node_modules/bootstrap/scss/bootstrap-grid';
+
+@import url('//fonts.googleapis.com/icon?family=Material+Icons');
+@import '~angular-tree-component/dist/angular-tree-component.css';
+
+
+@import '~@angular/material/theming';
+
+
+@include mat-core();
+
+$primary-color: #01579b;
+$danger-color: #9b0101;
+$secondary-color: #808080;
+
+$primary: mat-palette($mat-indigo, 500);
+$accent:  mat-palette($mat-lime, 500, A200, A400);
+$warn:    mat-palette($mat-red, 500);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+$mat-font-family: arial;
+
+@include angular-material-theme($theme);
+
+body {
+    font-family: $mat-font-family;
+    font-weight: normal;
+	margin:0;
+	background-color: #fafafa;
+
+    .relative-pos{
+    	position: relative;
+    }
+    .row{
+    	width: 100%;
+    }
+    .inline{
+    	display: inline-block;
+    	vertical-align: middle;
+	}
+	.field-label{
+		margin-bottom: 6px;
+		font-size: 12px;
+		font-weight: normal;
+		display: block;
+	}
+
+	.mat-error {
+		display: block;
+		float: left;
+		width: 100%;
+		font-size: 11px;
+		margin-bottom: 10px;
+	}
+
+	.invalid-group{
+		.images-list.mat-button-toggle-group{
+			border: 1px solid red;
+		}
+
+		.field-label{
+			color: red;
+		}
+	}
+
+	.images-list.mat-button-toggle-group{
+		display: block;
+		box-shadow: none;
+		margin-left: 10px;
+		border: 0px;
+
+		.mat-button-toggle-checked {
+			background-color: transparent;
+			color: white;
+			border: 2px solid gray;
+
+			.mat-button-toggle-focus-overlay{
+				border-bottom: 0px;
+				background-color:rgba(0, 0, 0, 0.12) !important;
+				opacity: 1;
+			}
+
+		}
+
+		.mat-button-toggle {
+			// white-space: nowrap;
+			// position: static;
+			// display: inline-block;
+			float: left;
+			// border: 1px solid;
+			width: 105px;
+			height: 105px;
+			// vertical-align: middle;
+			text-align: center;
+
+			display: flex;
+			align-items: center;
+			border: 0px;
+
+			.mat-button-toggle-label{
+				
+				margin-bottom: 0;
+				width: 100%;
+				text-align: center;
+
+				.mat-button-toggle-label-content{
+					line-height: 20px;
+					padding: 0px;
+					margin: 0px;
+				}
+			}
+
+			.mat-button-toggle-focus-overlay{
+				background-color:transparent;
+			}
+			
+		}
+
+	}
+
+	.image-subproduct{
+		width: 90px;
+	}
+	
+	.button-list.mat-button-toggle-group{
+		display: block;
+		box-shadow: none;
+		margin-left: 10px;
+
+		&.values-list{
+			.mat-button-toggle-checked {
+				background-color: black;
+				color: white !important;
+			}
+		}
+
+		.mat-button-toggle {
+			position: relative;
+			display: inline;
+			float: left;
+			margin: 5px;
+			border: 1px solid #c1c1c1;
+			width: 74px;
+			text-align: center;
+			height: 37px;
+			font-weight: bold;
+			color: black;
+			background-color: #f7f7f7;
+
+			.mat-button-toggle-label-content{
+				padding: 0px;
+			}
+		}
+	}
+
+    .mb{
+    	margin-bottom: 30px;
+    	&.mat-accordion{
+    		display: block;
+    	}
+    }
+
+    ul{
+    	margin: 0;
+    	li{
+    		list-style: none;
+    	}
+    }
+
+    .o-flex{
+    	display: flex;
+    }
+    .o-flexbox {
+    	display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: flex;
+	}
+    .o-flex-1 {
+	    -webkit-box-flex: 1;
+	    -ms-flex: 1;
+	    flex: 1;
+	}
+
+	.input-full-width{
+		width: 100%;
+	}
+
+	.btn-link{
+		text-decoration: none;
+		color: $secondary-color;
+		display: inline-block;
+		padding:10px 0;
+	}
+
+	.tool-bar{
+		background-color: gray;
+		padding: 5px;
+
+		.mat-button-toggle-group{
+			border: 0px;
+			box-shadow: none;
+			margin-left: 10px;
+
+
+			.mat-button-toggle-checked {
+				background-color: transparent;
+				color: #FFFFFF;
+			}
+
+			.mat-button-toggle-focus-overlay{
+				background-color: transparent;
+			}
+			
+
+			.mat-button-toggle-appearance-standard{
+				background-color: transparent;
+			}
+
+		}
+
+
+
+	}
+
+	.form-card{
+		padding: 0px;
+
+		mat-card-header {
+			    position: static;
+				width: 100%;
+				background-color: $primary-color;
+				max-width: 100%;
+
+			.mat-card-header-text{
+				width: 100%;
+				text-align: center;
+				color: white;
+
+				mat-card-title{
+					height: 100%;
+					padding-top: 7px;
+					margin-bottom: 7px;
+				}
+			}
+		}
+
+		mat-card-content{
+			padding: 10px;
+		}
+
+		mat-card-actions{
+			text-align: center;
+			padding: 0;
+			margin: 0;
+			padding-bottom: 10px !important;
+		}
+	}
+}
+
+h1, h2, h3, h4 {
+    font-weight: normal;
+}
+
+.toolbar-page{
+	background: $primary-color;
+
+	h2{
+		color: white;
+	}
+}
+
+.container{
+	margin: 0 auto;
+	width: 90%;
+
+	&.page{
+		margin:10px auto;
+	}
+}
+
+
+.single-content {
+	padding: 0px 1rem;
+
+	mat-card {
+		max-width: 400px;
+		margin: 2em auto;
+	
+		.logo{
+			max-width: 100%;
+			width: 100px;
+			display: block;
+		}
+	
+		.info{
+			margin-top: 20px;
+	
+			h2{
+				font-size: 23px;
+				margin:5px 0;
+			}
+		}
+
+		mat-form-field {
+			width: 100%;
+		}
+	}
+}
+
+.sidenav{
+	user-select: none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	padding-top: 80px;
+
+	div.men {
+	    float: none;
+		line-height: 15px;
+		width: 235px;
+
+	    a {
+		    color: $secondary-color;
+		    font-size: 13px;
+		    height: 48px;
+		    line-height: 15px;
+		    padding: 0 32px;
+		    cursor: pointer;
+			text-decoration: none;
+			display: flex;
+			align-items: center;
+
+			i{
+				margin-right: 10px;
+			}
+
+		    &.subheader {
+			    cursor: initial;
+			    pointer-events: none;
+			    color: rgba(0,0,0,0.54);
+			    font-size: 14px;
+			    font-weight: 500;
+			    line-height: 48px;
+			}
+		}
+	}
+}
+
+
+.header{
+    background: white;
+    position: fixed;
+    z-index: 1000;
+
+	.logo{
+		height: 40px;
+	}
+}
+
+
+.form-box {
+    margin: 0 -18px 20px -29px;
+    padding: 20px;
+    background: #fff;
+
+    mat-form-field{
+    	width: 95%;
+    }
+}
+
+.mat-sidenav-content {
+    padding-top: 64px;
+}
+.mat-card-header{
+	top: 64px;
+    position: absolute;
+    max-width: 300px;
+}
+
+
+
+
+.show_hover_table{
+	display: none;
+}
+mat-row:hover  .show_hover_table{
+	display: block;
+}
+.actions-table{
+	padding: 20px;
+}
+
+.filter-table{
+	padding: 5px 20px;
+}
+
+
+.panel-header{
+	background: $primary-color!important;
+	*:hover{
+		background: $primary-color!important;
+	}
+	.mat-expansion-panel-header-title{
+		color: white;
+	}
+}
+
+.mat-card-title{
+	font-size: 16px;
+}
+
+.center-vertical{
+    display: flex;
+    align-items: center;
+}
+
+.center-horizontal{
+    text-align: center;
+}
+
+.no-padding
+{
+	padding: 0px;
+}
+
+.no-margin{
+	margin: 0px;
+}
+
+.list-title{
+	text-align: left;
+	font-size: 13px;
+	font-weight: bold;
+	width: 100%;
+	padding-left: 10px;
+}
+
+.list-item{
+	text-align: left;
+	font-size: 13px;
+	color: $secondary-color;
+	width: 100%;
+	padding-left: 20px;
+}
+
+.mat-cell {
+    font-size: 12px;
+}
+
+.mat-form-field-wrapper{
+	font-size: 14px;
+}
+
+.pointer{
+	cursor: pointer;
+}
+
+.slide-toggle{
+	span{
+
+	}
+}
+
+.input-mid-left{
+	figure{
+		justify-content: left !important;
+
+		mat-form-field{
+			width: 48%;
+			padding-left: 10px;
+		}
+	}
+}
+
+.slide-toggle{
+
+	.mat-slide-toggle-content{
+		color: #01579b;
+		font-size: 10px;
+	}
+
+	.slide-toggle-label{
+		font-size: 12px;
+	}
+
+	.slide-toggle-value{
+		font-size: 12px;
+		color: $primary-color;
+	}
+}
+
+.form-modal-footer{
+	text-align: right;
+}
+
+.loading-overlay{
+	position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 20000; /* Specify a stack order in case you're using a different order for other elements */
+	cursor: wait; /* Add a pointer on hover */
+}
+
+.error-snackbar{
+	background: $danger-color;
+}
+
+.node-content-wrapper{
+    width: 100%;
+}
+
+.tree-node-label{
+	float: left;
+	font-size: 14px;
+}
+
+.tree-node-slide{
+    float: right;
+}
+
+.tree-node-title{
+	width: 100%;
+	float: left;
+}
+
+.tree-node-access{
+	width: 100%;
+	float: left;
+
+	.tree-node-label{
+		color: $secondary-color !important;
+	}
+}
+
+[hidden] {
+	display: none !important;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.mat-drawer-backdrop.mat-drawer-shown {
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+.mat-cell, .mat-header-cell{
+	word-wrap: normal !important;
+}
+
+.modal-content{
+	border: 0px;
+}
+
+.header-left-menu{
+	overflow: hidden;
+}
+
+.list-item-container{
+	
+}
+
+.list-item-container{
+    width: 100%;
+    height: 100%;
+    padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+    color: $secondary-color;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+// .action-column{
+//     flex: 0 0 40px;
+// }
